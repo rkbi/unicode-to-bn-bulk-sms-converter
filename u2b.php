@@ -14,6 +14,7 @@ $input_filepath = $_POST['input_file_location'];
 
 $output_filepath = rtrim($_POST['input_file_location'], '.csv') . '-output.csv';
 $output_file = fopen($output_filepath, 'w');
+fprintf($output_file, chr(0xEF).chr(0xBB).chr(0xBF)); // write utf-8 BOM
 
 $is_title_row = true;
 
